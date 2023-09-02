@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input tag</title>
+</head>
+<body>
+
+<form>
+<input/><br>
+
+text : 한 줄 입력할 때 사용
+<input type="text" name="name"/> 
+<br>
+
+maxlength - 최대 입력 글자 수, size - 보여줄 글자 수
+<input type="text" name="name" maxlength="10" size="10" value="기본값"/> 
+<br>
+
+password : 반향 문자를 사용할 때 - 한글은 입력되지 않는다.
+<input type="password" name="pass"/>
+<br>
+
+checkbox : 여러 값을 선택할 때 <!-- value는 back-end로 전송할 값 -->
+<input type="checkbox" name="hobby" value="웹툰"/>웹툰 
+<input type="checkbox" name="hobby" value="영화" checked="checked"/>영화
+<input type="checkbox" name="hobby" value="음악"/>음악
+<input type="checkbox" name="hobby" value="미술"/>미술
+<br>
+
+radio : 여러 값 중 하나를 선택할 때 
+<!-- radio는 name을 같이 설정하여 그룹으로 묶어서 사용
+HTML Form Control은 name속성이 같다면 배열로 처리된다.  -->
+<input type="radio" name="gender" value="남자"/>남자
+<input type="radio" name="gender" value="여자" checked="checked"/>여자
+<br>
+
+file : 파일 선택
+<!-- value를 설정할 수 없는 유일한 태그 : 
+접속자 컴퓨터의 HDD에 접근할 수 있기 때문에 
+보안의 이슈가 발생할 수 있으므로 value 속성을 설정할 수 없다. -->
+<input type="file" name="file"/>
+<br>
+
+hidden : 숨겨서 값 전달 - 자바 스크립트에서 값을 생성하여 value 속성에 할당한다.
+<input type="hidden" name="이름" value="값"/>
+<br>
+
+버튼류는 &lt;form&gt; 태그 안에 있을 때에만 동작한다.<br>
+버튼
+<input type="button" value="버튼모양"/>
+<br>
+취소 버튼
+<input type="reset" value="취소버튼"/>
+<br>
+전송 버튼
+<input type="submit" value="전송버튼"/>
+</form>
+
+</body>
+</html>
