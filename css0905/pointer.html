@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>pointer</title>
+<style type="text/css">
+#btn {
+	border: 1px solid #B1B1B1;
+	background-color: #D7D7D7;
+	width: 100px;
+	height: 30px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+#cross {
+	background: #FFFFFF
+		url(http://192.168.10.136/html_prj/common/images/damgom.jpg) no-repeat;
+	width: 300px;
+	height: 350px;
+	cursor: crosshair;
+}
+
+#progress {
+	background: #FFFFFF
+		url(http://192.168.10.136/html_prj/common/images/damgom.jpg) no-repeat;
+	width: 300px;
+	height: 350px;
+	cursor: progress;
+}
+
+#move {
+	background: #FFFFFF
+		url(http://192.168.10.136/html_prj/common/images/damgom.jpg) no-repeat;
+	width: 300px;
+	height: 350px;
+	cursor: move;
+}
+
+#wait {
+	background: #FFFFFF
+		url(http://192.168.10.136/html_prj/common/images/damgom.jpg) no-repeat;
+	width: 300px;
+	height: 350px;
+	cursor: wait;
+}
+</style>
+</head>
+<body>
+	<input type="button" value="클릭" id="btn" />
+	<!-- #void : 클릭해도 페이지로 이동하지 않음 -->
+	<a href="#void">클릭</a>
+
+	<br><br>
+
+	<div id="cross"></div>
+	
+	<div id="progress">로딩 중인 담곰이</div>
+	
+	<div id="move">움직이는 담곰이</div>
+	
+	<div id="wait">멈춰!</div>
+
+</body>
+</html>
