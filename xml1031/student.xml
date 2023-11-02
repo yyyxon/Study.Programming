@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+  <dataSize>3</dataSize>
+  <requestURL>http://localhost/jsp_prj/xml1031/student.xml</requestURL>
+  <isErrFlag>false</isErrFlag>
+  <student>
+    <num>3</num>
+    <name>김선경</name>
+    <age>26</age>
+    <email>sk@sk.com</email>
+    <input_date>2023-08-14 월요일</input_date>
+  </student>
+  <student>
+    <num>4</num>
+    <name>김인영</name>
+    <age>26</age>
+    <email>kim@sk.com</email>
+    <input_date>2023-08-14 월요일</input_date>
+  </student>
+  <student>
+    <num>5</num>
+    <name>김주민</name>
+    <age>26</age>
+    <email>kim26@test.com</email>
+    <input_date>2023-08-16 수요일</input_date>
+  </student>
+</students>
