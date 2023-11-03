@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+  <person gender="남자" age="7">
+    <name lastName="농">담곰</name>
+  </person>
+  <person gender="남자" age="5">
+    <name lastName="신">짱구</name>
+  </person>
+  <person gender="여자" age="3">
+    <name lastName="신">짱아</name>
+  </person>
+  <person gender="남자" age="2">
+    <name lastName="흰">둥이</name>
+  </person>
+</persons>
