@@ -140,8 +140,7 @@ if(cookies != null){
       </label>
     </div>
     
-    <div id="warginDiv">
-    </div>
+    <div id="warginDiv"></div>
     <br>
     <input id="loginBtn" class="btn btn-primary w-100 py-2" type="button" style="background-color: #FE8890; border-color: #FE8890" value="로그인">
   </form>
