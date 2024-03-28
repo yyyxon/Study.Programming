@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>design</title>
+<style type="text/css">
+#wrap {
+	width: 1000px;
+	height: 950px;
+	margin: 0px auto;
+}
+
+#header {
+	height: 200px;
+}
+
+#container {
+	height: 600px;
+	background-color: #FF0000;
+}
+
+#footer {
+	height: 150px;
+}
+
+#left {
+	float: left;
+	width: 698px;
+	height: 598px;
+	background-color: #3D8E4A;
+	border: 1px solid #333;
+}
+
+#right {
+	float: right;	
+	width: 280px;
+	height: 580px;
+	background-color: #6D5E9A;
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<!-- div는 부모 태그의 width를 상속 -->
+		<div id="header">header (1000x200)</div>
+		<div id="container">
+			<div id="left">left(700x600)</div>
+			<div id="right">right(700x600)</div>
+		</div>
+		<div id="footer">footer (1000x150)</div>
+	</div>
+</body>
+</html>

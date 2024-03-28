@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>design</title>
+<style type="text/css">
+#wrap {
+	width: 1000px;
+	height: 950px;
+	margin: 0px auto;
+}
+
+#header {
+	height: 200px;
+}
+
+#footer {
+	height: 150px;
+}
+
+/* left나 right의 시작 좌표를 브라우저가 아닌 container가 될 수 있도록 */
+/* positon: relative를 설정한다. */
+#container {
+	position: relative;
+	height: 600px;
+	background-color: #FF0000;
+}
+
+/* left나 right는 container의 시작점으로 top과 left를 설정한다. */
+#left {
+	position: absolute;
+	top: 100px;
+	left: 70px; 
+	width : 250px;
+	height: 130px;
+	background-color: #6D5E9A;
+}
+
+#right {
+	position: absolute;
+	top: 350px;
+	left: 600px; 
+	width : 300px;
+	height: 200px;
+	background-color: #489450;
+}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<!-- div는 부모 태그의 width를 상속 -->
+		<div id="header">header (1000x200)</div>
+		<div id="container">
+			<div id="left">left(700x600)</div>
+			<div id="right">right(700x600)</div>
+		</div>
+		<div id="footer">footer (1000x150)</div>
+	</div>
+</body>
+</html>

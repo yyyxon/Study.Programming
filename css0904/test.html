@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test</title>
+<style type="text/css">
+#tab {
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333
+}
+
+.td {
+	background-color: #F0F0F0;
+	font-weight: bold;
+	width: 200px;
+	height: 50px;
+}
+
+input {
+	height: 30px;
+	margin: 3px;
+}
+
+.input_w {
+	width: 300px;
+}
+
+.input_w2 {
+	width: 250px;
+}
+
+.input_w3 {
+	width: 500px;
+}
+
+#btn_con {
+	background-color: #04264C;
+	color: white;
+	border: 0px;
+	width: 130px;
+	height: 50px;
+	margin-left: 500px;
+}
+
+#btn_can {
+	background-color: #87888A;
+	color: white;
+	border: 0px;
+	width: 130px;
+	height: 50px;
+}
+
+.btn_white {
+	background-color: white;
+	border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+	<table id="tab">
+		<tr>
+			<td class="td"><font color="red">*</font>아이디</td>
+			<td><input type="text" class="input_w" /> <input type="button"
+				value="ID중복확인" class="btn_white" /></td>
+		</tr>
+		<tr>
+			<td class="td"><font color="red">*</font>비밀번호</td>
+			<td><input type="text" class="input_w" /> 비밀번호 확인 <input
+				type="text" width="100px" /> *6~12자의 영문, 숫자, 특수문자 3가지를 조합하여 입력</td>
+		</tr>
+		<tr>
+			<td class="td"><font color="red">*</font>이름</td>
+			<td><input type="text" class="input_w" /></td>
+		</tr>
+		<tr>
+			<td class="td"><font color="red">*</font>생일</td>
+			<td><input type="text" width="80px" /></td>
+		</tr>
+		<tr>
+			<td class="td">연락처</td>
+			<td><input type="text" width="80px" /></td>
+		</tr>
+		<tr>
+			<td class="td"><font color="red">*</font>휴대폰</td>
+			<td><input type="text" width="80px" /><input type="checkbox"
+				value="수신" />수신</td>
+		</tr>
+		<tr>
+			<td class="td"><font color="red">*</font>이메일</td>
+			<td colspan="2"><input type="text" class="input_w" />@ <select
+				size=1>
+					<option>선택해주세요.</option>
+					<option>직접입력</option>
+					<option>naver.com</option>
+					<option>daum.net</option>
+					<option>gmail.com</option>
+			</select><input type="checkbox" value="수신" />수신</td>
+		</tr>
+		<tr>
+			<td class="td"><font color="red">*</font>성별</td>
+			<td><input type="radio" name="gender" value="남자" />남자 <input
+				type="radio" name="gender" value="여자" />여자</td>
+		</tr>
+		<tr>
+			<td class="td">소재지</td>
+			<td><select size=1>
+					<option>선택해주세요.</option>
+					<option>강원</option>
+					<option>경기</option>
+					<option>경남</option>
+					<option>경북</option>
+			</select></td>
+		</tr>
+		<tr>
+			<td class="td"><font color="red">*</font>우편번호</td>
+			<td><input type="text" class="input_w2" /> <input type="button"
+				value="우편번호 검색" class="btn_white" /></td>
+		</tr>
+		<tr>
+			<td class="td" rowspan="2"><font color="red">*</font>주소</td>
+			<td><input type="text" class="input_w3" /></td>
+		</tr>
+		<tr>
+			<td><input type="text" class="input_w3" /></td>
+		</tr>
+	</table>
+	<br>
+	<input type="button" value="확인" id="btn_con" />
+	<input type="button" value="취소" id="btn_can" />
+</body>
+</html>
