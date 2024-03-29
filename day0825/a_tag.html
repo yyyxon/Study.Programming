@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>a tag</title>
+</head>
+<body>
+
+<h2>상대 경로</h2>
+<ul>
+	<li>같은 폴더 : <a href="test.html">히히</a></li>
+	<li>하위 폴더 : <a href="sub/test_sub.html">히히</a></li>
+	<li>상위 폴더 : <a href="../day0824/img_tag.html" title="img_tag">히히</a></li>
+</ul>
+
+<h2>URL</h2>
+<!-- localhost는 접속자 컴퓨터에서 서버가 동작하지 않거나 
+접속자 컴퓨터에서 제공하는 URL이 서버와 일치하지 않으면 해당 자원에 접근할 수 없다. -->
+<ul>
+	<li>같은 폴더 : <a href="http://192.168.10.136/html_prj/day0825/test.html">히히</a></li>
+</ul>
+
+<h2>외부서버와 연결</h2>
+<ul>
+	<li><a href="http://daum.net"><img src="http://192.168.10.136/html_prj/common/images/daum.png"/></a></li>
+</ul>
+
+<h2>부가 기능</h2>
+<ul>
+<!-- 국제 전화는 +를 붙여서 사용하면 된다. -->
+	<li>관리자에게 <a href="mailto:">메일 쓰기</a></li>
+	<li>관리자에게 <a href="tel:">전화 걸기</a></li>
+	<li>관리자에게 <a href="sms:">메시지 보내기</a></li>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>readonly, disabled</title>
+</head>
+<body>
+
+<form action="call_test.jsp">
+	<fieldset>
+		<legend>읽기 전용, 비활성화의 차이</legend>
+		<label>주소1 : 읽기 전용</label>
+		<input type="text" name="addr1" value="마계인천시 부평구 부평동" readonly="readonly"/> <br>
+		<label>주소2 : 비활성화</label>
+		<input type="text" name="addr1" value="마계아파트 1동 102호" disabled="disabled"/> <br>
+		<input type="submit" name="전송"/> <br>
+	</fieldset>
+</form>
+
+</body>
+</html>
