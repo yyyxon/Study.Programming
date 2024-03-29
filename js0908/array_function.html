@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>array function</title>
+<link rel="stylesheet" type="text/css" 
+href="http://192.168.10.136/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+
+</style>
+<script type="text/javascript">
+//자바스크립트의 배열은 기능이 있다.
+var arr=["자바","오라클","JDBC","홍찬영","HTML","홍찬영","CSS"];
+
+//방의 값을 찾는 기능 : 찾을 값이 없다면 -1을 반환
+document.write("홍찬영 : " + arr.indexOf("홍찬영") + "<br>");
+document.write("jdbc : " + arr.indexOf("jdbc") + "<br>");
+
+//삭제 : splice(시작인덱스, 삭제할 방의 개수)
+arr.splice(2,4);
+
+for(var i=0; i<arr.length; i++){
+	document.write("arr : " + arr[i] + "<br>");
+}
+
+
+//배열 합치기 : ...배열명
+var arr2=["JavaScript","jQuery",...arr,"VUE.JS","JSP"];
+
+for(var i=0; i<arr2.length; i++){
+	document.write("arr2 : " + arr2[i] + "<br>");
+}
+
+
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제어문 - 반복문</title>
+<!-- <link rel="stylesheet" type="text/css" 
+href="http://192.168.10.136/html_prj/common/css/main_v20230906.css"/> -->
+<style type="text/css">
+
+
+</style>
+<script type="text/javascript">
+//<script> 태그는 JavaScript영역이므로 
+//HTML태그를 직접 사용할 수 없다.
+//write() 안은 HTML 태그 사용 가능
+for(var i=1; i < 7; i++){
+	document.write("<h" + i+ ">안녕하세요?</h" + i + ">");
+}
+
+document.write("<select>");
+for(var i=1; i < 101; i++){
+	document.write("<option>"+ i +"</option>");
+}
+document.write("</select>");
+
+document.write("<table border=1 cellspacing=0>");
+for(var i=2; i <10; i++){
+	document.write("<tr height=30px>")
+	for(var j=1; j<10; j++) {
+		document.write("<td width=60px>"+ i + "*" + j + "=" + (i*j));
+	}
+	document.write("</tr>")
+}
+document.write("</table>");
+
+document.write("<marquee scrollamount='20'>")
+for(var i=0; i<4; i++){
+	for(var j=0; j<i+1; j++){
+		img="damgom.jpg";
+		if(i%2==0){
+			img="dam.jpg";
+		}
+		document.write("<img height='100px' src='http://localhost/html_prj/common/images/"+ img +"'/>");
+	}
+	document.write("<br>");
+}
+document.write("</marquee>")
+</script>
+</head>
+<body>
+
+</body>
+</html>

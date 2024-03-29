@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://192.168.10.136/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+#wrapBtn{
+    text-align: center;
+}
+
+.btn2 {
+    width: 120px;
+}
+</style>
+<script type="text/javascript">
+
+lastName = "";
+firstName= "";
+
+lastNameArr= "";
+firstNameArr= "";
+
+function inputName() {
+    var name = prompt("이름을 입력해주세요");
+    if(name.startsWith("선우") || name.startsWith("독고") || name.startsWith("제갈") || name.startsWith("남궁")) {
+        lastName += name.substring(0,2) + " ";
+        firstName += name.substring(2) + " ";
+    }else {
+        lastName += name.charAt(0) + " ";
+        firstName += name.substring(1) + " ";
+    }
+
+    lastNameArr = lastName.split(" ");
+    firstNameArr = firstName.split(" ");
+}
+
+function outputName() {
+    var div = document.getElementById("div");
+    var output = "<table style='border: 1px solid #333'> <tr><th>성</th><th>이름</th></tr>";
+
+        for(var i=0; i<lastNameArr.length; i++){
+            output += "<tr><td>" + lastNameArr[i] + "</td><td>" + firstNameArr[i] + "</td></tr>";
+        }
+
+    output += "</table>"; 
+    div.innerHTML = output;
+}
+
+</script>
+</head>
+<body>
+<div id="wrapBtn">
+    <input type="button" class="btn btn2" value="이름 입력" onclick="inputName()"/>
+    <input type="button" class="btn btn2" value="이름 출력" onclick="outputName()"/>
+</div>
+<div id="div"></div>
+</body>
+</html>

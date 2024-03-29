@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>operator</title>
+<link rel="stylesheet" type="text/css" 
+href="http://192.168.10.136/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+
+</style>
+<script type="text/javascript">
+//관계 연산자
+var num=9;
+var num2="9";
+var num3=9;
+var num4=7;
+
+//== 데이터형이 달라도 값만 같다면 true
+alert("number == string -> " + (num==num2)); //true
+
+//=== 데이터형과 값이 모두 같아야 true
+alert("number === string -> " + (num===num2)); //false
+alert("number === number -> " + (num===num3)); //true
+
+//!= 값만 다르면 true
+alert("number != number -> " + (num!=num4)); //true
+
+//!== 값과 데이터형이 다르면 true
+alert("number !== number -> " + (num!==num4)); //true
+</script>
+</head>
+<body>
+</body>
+</html>
