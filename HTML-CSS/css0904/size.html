@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>size</title>
+<style type="text/css">
+
+#width { width : 100px }
+
+#height { height : 100px }
+
+#div1 { border : 1px solid #333; width : 400px }
+
+/* height는 %로 설정되지 않는다. */
+#div2 { border : 1px solid #0F0F0F; width : 50%; height: 100px }
+
+/* 테이블 디자인 설정 시작 */
+#numTh { width : 80px }
+#nameTh { width : 120px }
+#ageTh { width : 90px }
+#emailTh { width : 300px }
+
+table { border-spacing : 0px; text-align : left;}
+
+th { font-weight : normal; border-bottom : 2px solid; background-color: #4A7EBB }
+
+td { height : 30px; border-bottom : 1px dotted #4A7EBB }
+/* 테이블 디자인 설정 끝 */
+
+</style>
+</head>
+<body>
+
+원본 : <img src = "http://192.168.10.136/html_prj/common/images/hcy.png"/> <br>
+크기 변경(w) : <img src = "http://192.168.10.136/html_prj/common/images/hcy.png" id="width"/> <br>
+크기 변경(h) : <img src = "http://192.168.10.136/html_prj/common/images/hcy.png" id="height"/>
+
+<div id="div1"> div </div>
+<div id="div2"> div </div>
+
+<table>
+<tr>
+<th id="numTh">번호</th>
+<th id="nameTh">이름</th>
+<th id="ageTh">나이</th>
+<th id="emailTh">이메일</th>
+</tr>
+<tr>
+	<td>1</td>
+	<td>강다연</td>
+	<td>24</td>
+	<td>kang@test.com</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>박상준</td>
+	<td>25</td>
+	<td>park@test.com</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>송지하</td>
+	<td>25</td>
+	<td>song@test.com</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>홍찬영</td>
+	<td>26</td>
+	<td>honghong@test.com</td>
+</tr>
+</table>
+
+</body>
+</html>
