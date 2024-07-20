@@ -4,6 +4,17 @@ public class ForwardVO {
 	private String name, area;
 	private int age;
 	
+	public ForwardVO() {
+		super();
+	}
+
+	public ForwardVO(String name, String area, int age) {
+		super();
+		this.name = name;
+		this.area = area;
+		this.age = age;
+	}
+
 	public String getName() {
 		return name;
 	}
