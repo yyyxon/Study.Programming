@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.sist.exam2">
+	<!-- 컬럼 여러 개, 행 하나 조회 : 사원 번호를 입력받아 사원명, 부서번호를 조회 -->
+	<!-- Domain과 select가 다른 경우 alias 사용 -->
+	<!-- resultType이나 parameterType에는 typeAlias에 정의된 alias를 사용할 수 있다. -->
+	<select id="mcsr" resultType="cdd" parameterType="Integer">
+		select	ename empName, deptno
+		from 	emp
+		where	empno = #{ empno }
+	</select>
+	
+	<!-- 컬럼 하나, 여러 행 조회 : 부서번호를 입력받아 사원명을 조회(resultTpye="단일형") -->
+	<select id="scmr" resultType="String" parameterType="Integer">
+		select	ename
+		from 	emp
+		where 	deptno = #{deptno}
+	</select>
+	
+	<!-- 연습 문제 : 부서 번호를 받아 사원 번호 조회 -->
+	<select id="deptEmp" resultType="Integer" parameterType="Integer">
+		select	empno
+		from 	emp
+		where 	deptno = #{deptno}
+	</select>
+	
+	<!-- 컬럼 여러 개, 여러 행 조회 : 모든 사원 정보를 조회, 사원번호, 사원명, 입사일, 연봉 -->
+	<!-- resultType은 존재하나 parameterType 속성은 정의하지 않는다. -->
+	<!-- Handler에서는 ss.selectList("아이디"); 로 호출한다.  -->
+	<select id="mcmr" resultType="ed">
+		select empno, ename, hiredate, sal
+		from emp
+	</select>
+	
+	<!-- _______________________________________________ -->
+	
+	<!-- 중복 쿼리문 정의 -->
+	<sql id="selectEmp">
+	select empno, ename, sal
+	from emp
+	</sql>
+	
+	<!-- < 조회 : 입력되는 연봉보다 적은 연봉을 수령하는 사원의 사원번호, 사원명, 연봉을 조회 -->
+	<!-- < 는 xml 작성 규칙에 위배 됨 => &lt; 또는 CDATA section 사용 -->
+	<!-- CDATA section은 노드가 아닌 단순 문자열로 처리된다. -->
+	<select id="lessThan" resultType="ed" parameterType="int">
+		<include refid="selectEmp"/>
+		<![CDATA[
+		where	sal < #{ sal }
+		order by sal desc
+		]]>
+	</select>
+	
+	<!-- > 조회 : 입력되는 연봉보다 많은 연봉을 수령하는 사원의 사원번호, 사원명, 연봉을 조회 -->
+	<!-- >는 XML 작성 규칙에 위배되지 않기때문에 그냥 써도 되고, 
+	&gt;를 써도 되고 CDATA Section을 열어도 된다. -->
+	<select id="greaterThan" resultType="ed" parameterType="int">
+		<include refid="selectEmp"/>
+		<![CDATA[
+		where	sal > #{ sal }
+		order by sal desc
+		]]>
+	</select>
+	
+	<!-- like 조회 : 동을 입력받아 동에 해당하는 우편번호, 시도, 구군, 동, 번지를 조회 -->
+	<!-- where 	dong like '%'||#{ dong }||'%' -->
+	<select id="like" resultType="zd" parameterType="String">
+		select 	zipcode, sido, gugun, dong, bunji
+		from 	zipcode
+		where 	dong like #{ dong }||'%'
+	</select>	
+	
+	<!-- _______________________________________________ -->
+
+	<!-- subquery -->
+
+	<!-- union -->
+
+	<!-- join -->
+
+	<!-- subquery + join -->
+
+	<!-- 테이블명이 동적일 때 -->
+	
+	<!-- _______________________________________________ -->
+	
+	<!-- dynamic query : if -->
+	
+	<!-- dynamic query : choose -->
+	
+	<!-- dynamic query : foreach -->
+</mapper>
