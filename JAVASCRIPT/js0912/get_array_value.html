@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+    div {
+        position: absolute;
+        border: 1px solid #333;
+        left: 600px;
+        top: 50px;
+        width: 400px;
+        height: 300px;
+        background-color: aliceblue;
+        box-shadow: 5px 5px 5px #333;
+    }
+</style>
+<script type="text/javascript">
+function getArrayValue() {
+    //이름이 같으면 배열
+    var obj = document.frm;
+    var genderArr = obj.gender;
+    var selGender = "";
+    var output = "";
+
+    for(var i=0; i<genderArr.length; i++){
+        if(genderArr[i].checked){
+            selGender = genderArr[i].value;
+        }//end if
+    }//end for
+
+    if(selGender == ""){
+        alert("성별을 선택해주세요.");
+        return;
+    }
+
+    var movieArr = obj.movie;
+    var selMovie = "";
+    for(var i=0; i<movieArr.length; i++){
+        if(movieArr[i].checked){
+            selMovie += movieArr[i].value + " ";
+        }//end if
+    }//end for
+
+    if(selMovie == "") {
+        selMovie = "선택하신 영화가 없습니다.";
+    }//end if
+
+    var subjectArr = obj.subject;
+    for(var i=0; i<subjectArr.length; i++){
+        //alert(subjectArr[i].selected+ " / " + subjectArr[i].value);
+        if(subjectArr[i].selected){
+            subject = subjectArr[i].value;
+            break;
+        }//end if
+    }
+    
+    output += "선택 성별 : " + selGender + "<br>";
+    output += "선택 영화 : " + selMovie + "<br>";
+    output += "선택 과목 : " + subject + "<br>";
+
+    document.getElementById("output").innerHTML = output;
+
+}
+</script>
+</head>
+<body>
+<form name="frm">
+<label>성별</label>
+<input type="radio" name="gender" value="M"/>남자<br>
+<input type="radio" name="gender" value="F"/>여자<br>
+
+<label>영화</label>
+<input type="checkbox" name="movie" value="엘리멘탈"/>엘리멘탈<br>
+<input type="checkbox" name="movie" value="범죄도시3"/>범죄도시3<br>
+<input type="checkbox" name="movie" value="오펜하이머"/>오펜하이머<br>
+<input type="checkbox" name="movie" value="DP2"/>DP2<br>
+
+<label>과목</label>
+<select name="subject" class="inputBox">
+    <option value="JavaSE">Java SE</option>
+    <option value="Oracle DBMS">Oracle DBMS</option>
+    <option value="JDBC">JDBC</option>
+    <option value="HTML">HTML</option>
+    <option value="CSS">CSS</option>
+    <option value="JavaScript">JavaScript</option>
+</select>
+
+<input type="button" value="값 얻기" class="inputBox" onclick="getArrayValue()"/>
+</form>
+<div id="output"></div>
+
+</body>
+</html>
