@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById("btn").addEventListener("click",printName);
+    }//onload
+
+    function printName() {
+        var obj = document.frm;
+        alert("입력하신 이름은 " + obj.name.value + "입니다.");
+
+    }//printName
+
+</script>
+</head>
+<body>
+    <form name="frm">
+        <label>이름</label> <input type="text" name="name" class="inputBox"/> <br>
+        <input type="button" value="클릭" id="btn" class="btn"/>
+
+    </form>
+</body>
+</html>
