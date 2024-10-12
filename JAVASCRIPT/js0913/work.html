@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload = function() {
+
+    document.getElementById("sel").addEventListener("change",pageLocation);
+
+}
+
+function pageLocation() {
+    var obj = document.frm;
+    var selectOption = obj.sel.value;
+    var flag = confirm(selectOption + "로 이동하시겠습니까?");
+
+    if(flag) {
+        location.href = selectOption;
+    }
+    
+}
+
+</script>
+</head>
+<body>
+<form name="frm">
+    <select name="sel" id="sel">
+        <option value="https://www.google.com/?hl=ko">구글</option>
+        <option value="https://www.naver.com/">네이버</option>
+        <option value="https://www.daum.net/">다음</option>
+        <option value="https://www.youtube.com/">유튜브</option>
+    </select>
+</form>
+</body>
+</html>
