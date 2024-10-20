@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+window.onload = function() {
+    document.getElementById("btnLength").addEventListener("click",testLeng);
+    document.getElementById("btnBack").addEventListener("click",testBack);
+    document.getElementById("btnGo").addEventListener("click",testGo);
+    document.getElementById("btnGo2").addEventListener("click",testGo2);
+}
+
+function testLeng() {
+    alert("히스토리의 수 : " + window.history.length);
+}
+
+function testBack() {
+    history.back();
+    //history.go(-1);
+}
+
+function testGo() {
+    history.go();
+}
+
+function testGo2() {
+    history.go(2);
+}
+
+</script>
+</head>
+<body>
+<input type="button" value="history 수" class="btn" id="btnLength"/>
+<input type="button" value="뒤로" class="btn" id="btnBack"/>
+<input type="button" value="앞으로" class="btn" id="btnGo"/>
+<input type="button" value="앞으로 2칸" class="btn" id="btnGo2"/>
+
+</body>
+</html>
