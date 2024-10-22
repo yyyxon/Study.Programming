@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload = function() {
+    document.getElementById("addStorage").addEventListener("click",addStorage);
+    document.getElementById("getStorage").addEventListener("click",getStorage);
+    document.getElementById("removeStorage").addEventListener("click",removeStorage);
+    document.getElementById("clearStorage").addEventListener("click",clearStorage);
+    
+}
+
+function addStorage() {
+	//이름과 나이를 가져와서 storage 추가
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+
+    //1.storage 얻기
+    var ls = localStorage;
+    //2. 값 설정
+    ls.setItem("name",name);
+    ls.setItem("age",age);
+
+}
+
+function getStorage() {
+    var name = localStorage.getItem("name");
+    var age = localStorage.getItem("age");
+
+    document.getElementById("div").innerHTML = "Local 이름 : " + name + ", 나이 : " + age;
+}
+
+function removeStorage() {
+    localStorage.removeItem("name");
+}
+
+function clearStorage() {
+    localStorage.clear();
+}
+
+
+</script>
+</head>
+<body>
+<input type="text" class="inputBox" id="name" placeholder="이름 입력"/><br>
+<input type="text" class="inputBox" id="age" placeholder="나이 입력"/><br>
+
+<input type="button" value="스토리지 추가" class="btn" id="addStorage"/><br>
+<input type="button" value="스토리지 값 얻기" class="btn" id="getStorage"/><br>
+<input type="button" value="스토리지 삭제" class="btn" id="removeStorage"/><br>
+<input type="button" value="스토리지 모두 삭제" class="btn" id="clearStorage"/><br>
+<div id="div" class="inputBox" style="width: 200px; height: 100px;"></div>
+</body>
+</html>
