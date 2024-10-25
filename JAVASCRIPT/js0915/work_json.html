@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+div {
+	border: 1px solid #333;
+	background-color: aliceblue;
+	width: 200px;
+	height: 100px;
+	margin-top: 20px;
+}
+
+</style>
+<script type="text/javascript">
+
+window.onload = function() {
+    document.getElementById("inputBtn").addEventListener("click",inputEvent);
+    document.getElementById("outputBtn").addEventListener("click",outputEvent);
+}
+
+function inputEvent() {
+    var name = document.getElementById("name").value;
+    var age = document.getElementById("age").value;
+    jsonObject = {name:name, age:age};
+    
+    document.getElementById("name").value = "";
+    document.getElementById("age").value = "";
+    alert("입력 완료");
+    document.getElementById("name").focus();
+}
+
+function outputEvent() {
+    document.getElementById("div").innerHTML = "이름 : " + jsonObject.name + ", 나이 : " + jsonObject.age;
+}
+
+</script>
+</head>
+<body>
+
+<label>이름</label>
+<input type="text" class="inputBox" id="name"/><br>
+
+<label>나이</label>
+<input type="text" class="inputBox" id="age"/><br>
+
+<input type="button" class="btn" id="inputBtn" value="입력"/>
+<input type="button" class="btn" id="outputBtn" value="출력"/>
+
+<div id="div"></div>
+
+</body>
+</html>
