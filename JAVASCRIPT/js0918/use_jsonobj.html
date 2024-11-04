@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload = function() {
+    document.getElementById("btn").addEventListener("click",useJSONObject);
+    document.getElementById("btn1").addEventListener("click",addJSONData);
+    document.getElementById("btn2").addEventListener("click",printJSONData);
+}//onload
+
+function useJSONObject() {
+    //1.JSONObject 선언
+    var jsonObj = {name:"홍찬영", age:26, trip:[{day:"1일차",schedule:"술마심"},
+                                                {day:"2일차",schedule:"디즈니랜드"},
+                                                {day:"3일차",schedule:"아키아바라"}
+                                                ]
+                                            };    
+    //2.JSONArray 선언
+    var jsonTripArr;
+
+    //3.JSONArray를 JSONObject에 추가
+    var obj = document.frm;
+    obj.name.value = jsonObj.name;
+    obj.age.value = jsonObj.age;
+
+    var data = "";
+    jsonTripArr = jsonObj.trip;
+    var jsonTripData;
+
+    //4.사용
+    for(var i=0; i<jsonArr.length; i++){
+        jsonTripData = jsonTripArr[i];
+        data += jsonTripData.day + " - " + jsonTripData.schedule + "\n";
+    }//end for
+    obj.tripinfo.value = data;
+
+}//useJSONObject
+
+jsonObj = {};
+
+function addJSONData() {
+    var obj = document.frm2;
+    jsonObj.name = obj.name.value;
+    jsonObj.age = obj.age.value;
+    var hobbyArr = [];
+    for(var i=0; i<obj.hobby.length; i++){
+        if(obj.hobby[i].checked){
+            hobbyArr[hobbyArr.length] = {hobby : obj.hobby[i].value};
+        }//end if
+    }//end for
+    jsonObj.hobby = hobbyArr; 
+}
+
+function printJSONData() {
+    var output = "";
+    output += "이름 : " + jsonObj.name + "<br>";
+    output += "나이 : " + jsonObj.age + "<br>";
+    output += "취미 : ";
+    var jsonData;
+    for(var i=0; i<jsonObj.hobby.length; i++){
+        jsonData = jsonObj.hobby[i];
+        output+=jsonData.hobby+"<br>";
+    }//end for
+
+    if(jsonObj.hobby.length == 0){
+        output+="선택하신 취미가 없습니다.";
+    }
+
+    document.getElementById("output").innerHTML = output;
+}
+
+</script>
+</head>
+<body>
+    <form name="frm">
+        <label>이름</label><input type="text" name="name" class="inputBox"/><br>
+        <label>나이</label><input type="text" name="age" class="inputBox"/><br>
+        <textarea name="tripinfo" class="inputBox" style="width:300px; height: 100px;"></textarea>
+    </form>
+    <input type="button" value="사용" class="btn" id="btn"/>
+
+<div>
+    <form name="frm2">
+        <label>이름</label><input type="text" name="name" class="inputBox"/><br>
+        <label>나이</label><input type="text" name="age" class="inputBox"/><br>
+        <label>취미</label>
+        <input type="checkbox" name="hobby" value="게임"/>게임<br>
+        <input type="checkbox" name="hobby" value="등산"/>등산<br>
+        <input type="checkbox" name="hobby" value="축구"/>축구<br>
+        <input type="checkbox" name="hobby" value="독서"/>독서<br>
+        <input type="button" value="값 설정" class="btn" id="btn1"/>
+        <input type="button" value="값 출력" class="btn" id="btn2"/>
+    </form>
+    <div id="output"></div>
+</div>
+</body>
+</html>
