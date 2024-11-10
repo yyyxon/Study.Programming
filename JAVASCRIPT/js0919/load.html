@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN 시작 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQeury CDN 끝 -->
+<script type="text/javascript">
+$(window).load(function() { //body태그내 태그 구성과 필요 항목을 
+    alert("load");          //모두 로딩한 후 jQuery 실행. ready보다 느림
+});
+/*
+$(document).ready(function() { //body태그내 태그 구성만 로딩한 후 jQuery 실행
+    alert("ready");
+});
+*/
+
+$(function() { //ready 생략
+    alert("ready");
+});
+</script>
+</head>
+<body>
+
+</body>
+</html>
