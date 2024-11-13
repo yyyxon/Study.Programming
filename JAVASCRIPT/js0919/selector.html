@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+    /* p:hover {
+        font-size: 40px;
+    } */
+</style>
+<!-- jQuery CDN 시작 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQeury CDN 끝 -->
+<script type="text/javascript">
+$(function() {
+    //id selector
+    $("#btn").click(function() {
+        alert("ID Selector");
+    });
+
+    //class selector
+    $(".div").css("font-size","30px");
+
+    //tag selector
+    $("li").css("color","skyblue");
+
+    //multiple selector
+    $("th,td").css("color","blue");
+
+    //sub selector
+    $("ol > li").css("color","green");
+
+    //behavior selector - hover 지원x 함수로 가능
+    //$("p:hover").css("font-size","40px")
+    $("p").hover(function() {
+        $("p").css("font-size","40px");
+    }, function() {
+        $("p").css("font-size","13px");
+    })
+
+    //:odd : 홀수번째에 적용
+    //:even : 짝수번째에 적용
+    //$("li:odd").css("color","black");
+    $("li:even").css("color","black");
+
+
+});//ready
+</script>
+</head>
+<body>
+<input type="button" value="ID Selector" id="btn" class="btn"/>
+<!-- <input type="button" value="ID Selector2" id="btn" class="btn"/> 
+    똑같은 id가 둘 이상이면 뒤에 나오는 id를 식별하지 못한다. id는 모두 달라야 함!! -->
+<div class="div">div1</div>
+<div class="div2">div2</div>
+<div class="div">div3</div>
+
+<ul>
+    <li>짜장면</li>
+    <li>볶음밥</li>
+    <li>구내식당</li>
+    <li>역삼갈비</li>
+    <li>탄</li>
+</ul>
+
+<ol>
+    <li>사과</li>
+    <li>복숭아</li>
+    <li>망고</li>
+    <li>망고스틴</li>
+    <li>천혜향</li>
+</ol>
+
+<table>
+    <tr>
+        <th>교재명</th>
+        <th>저자</th>
+        <th>출판사</th>
+    </tr>
+    <tr>
+        <td>이것이 자바다</td>
+        <td>신용권, 임태균</td>
+        <td>한빛미디어</td>
+    </tr>
+    <tr>
+        <td>데이터베이스 개론과 실습</td>
+        <td>박우창</td>
+        <td>한빛미디어</td>
+    </tr>
+    <tr>
+        <td>HTML5 프로그래밍 입문</td>
+        <td>윤인성</td>
+        <td>한빛미디어</td>
+    </tr>
+</table>
+
+<p>오늘은 화요일입니다.</p>
+
+</body>
+</html>
