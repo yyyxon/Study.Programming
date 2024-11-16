@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+input, a, select {
+    margin-bottom: 20px;
+}
+
+#output {
+    border: 1px solid rgb(98, 158, 207);
+    width: 300px;
+    height: 300px;
+    overflow: auto;
+}
+</style>
+<!-- jQuery CDN 시작 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQeury CDN 끝 -->
+<script type="text/javascript">
+$("document").ready(function() {
+    $("#btn").click(function() {
+        alert("클릭되었습니다.");
+    });//click
+
+    $("#atag").click(function() {
+        test();
+    });//click
+
+    $("#sel").change(function() {
+        alert("변경되었습니다.");
+    });//change
+
+    $("#txt").change(function() { //커서가 들어갔을 때의 값과 
+        alert("변경되었습니다.");  //빠져나갔을 때의 값이 다를 때 동작
+    });//change
+
+    $("#txt2").focusin(function() {
+        $("#output").html("커서가 들어옴");
+    });//focusin
+
+    $("#txt3").focusout(function() {
+        $("#output").html("<strong>커서가 빠져나감(focusout)</strong>");
+    });//focusout
+
+    $("#txt4").blur(function() {
+        $("#output").html("<strong>커서가 빠져나감(blur)</strong>");
+    });//focusout
+    
+    $("#txt5").keydown(function(evt) { //눌린 키의 key code를 얻고 싶다면 무기명 함수의 매개변수를 설정
+        $("#output").html("<strong>키가 눌림 : </strong>" + $("#txt5").val() + " / " + evt.which);
+    });//keydown
+
+    $("#txt6").keyup(function(evt) { 
+        var keyText = $("#txt6").val();
+        var keyChar = evt.which;
+        $("#output").html("<strong>키가 올라옴 : </strong>" + keyText + " / " + keyChar);
+    });//keyup
+
+    $("#img").mouseover(function() {
+        $("#output").html("<img src='../common/images/dam1.jpg'/>")
+    });//mouseover
+
+    $("#img2").mouseout(function() {
+        $("#output").html("<img src='../common/images/dam2.jpg'/>")
+    });//mouseover
+
+    $("#img3").hover(function() {
+        $("#output").html("<img src='../common/images/dam3.jpg'/>")
+    });//mouseover
+
+});
+
+function test() {
+    alert("클릭 되었습니다.");
+}
+
+</script>
+</head>
+<body>
+<input type="button" value="클릭" id="btn" class="btn"/><br>
+<a href="#void" id="atag">클릭</a><br>
+<select id="sel">
+    <option>Java SE</option>
+    <option>Oracle DBMS</option>
+    <option>JDBC</option>
+</select><br>
+
+<input type="text" name="text" id="txt" class="inputBox" placeholder="변경"/><br>
+
+<label>커서가 들어갈 때 : focusin</label><br>
+<input type="text" name="text" id="txt2" class="inputBox" placeholder="커서가 들어옴"/><br>
+
+<label>커서가 빠져나갈 때 : focusout</label><br>
+<input type="text" name="text" id="txt3" class="inputBox" placeholder="커서가 빠져나감"/><br>
+
+<label>커서가 빠져나갈 때 : blur</label><br>
+<input type="text" name="text" id="txt4" class="inputBox" placeholder="커서가 빠져나감"/><br>
+
+<label>키가 눌렸을 때 : keydown</label><br>
+<input type="text" name="text" id="txt5" class="inputBox" placeholder="키가 눌림"/><br>
+
+<label>키가 올라올 때 : keyup</label><br>
+<input type="text" name="text" id="txt6" class="inputBox" placeholder="키가 올라옴"/><br>
+
+<label>마우스가 올라올 때 : mouseover</label><br>
+<img src="../common/images/dam.jpg" id="img"/><br>
+
+<label>마우스가 빠져나갔을 때 : mouseout</label><br>
+<img src="../common/images/dam.jpg" id="img2" width="200px"/><br>
+
+<label>마우스가 올라올 때 : hover</label><br>
+<img src="../common/images/dam.jpg" id="img3" width="200px"/><br>
+
+<br>
+<div id="output"></div>
+</body>
+</html>
