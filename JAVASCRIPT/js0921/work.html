@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css"
+	href="http://localhost/html_prj/common/css/main_v20230906.css" />
+<style type="text/css">
+#idDiv, #passDiv {
+	color: red;
+}
+</style>
+<!-- jQuery CDN 시작 -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQeury CDN 끝 -->
+<script type="text/javascript">
+	$(function() {
+		$("#id").keydown(function(evt) {
+			if (evt.which == 13) {
+				if ($("#id").val() != "" && $("#pass").val() != "") {
+					window.location.href = "https://www.sist.co.kr/index.jsp";
+				} else if ($("#id").val() == "") {
+					$("#idDiv").html("아이디는 필수입력");
+					$("#id").focus();
+				} else{
+                    $("#pass").focus();
+                    $("#idDiv").html("");
+                }
+			}
+		});
+
+		$("#pass").keydown(function(evt) {
+			if (evt.which == 13) {
+				if ($("#id").val() != "" && $("#pass").val() != "") {
+					window.location.href = "https://www.sist.co.kr/index.jsp";
+				} else if ($("#pass").val() == "") {
+					$("#passDiv").html("비밀번호는 필수입력");
+					$("#pass").focus();
+				} else {
+                    $("#passDiv").html("");
+                    $("#id").focus();
+                }
+			}
+		});
+
+		$("#loginBtn").click(function(evt) {
+			if ($("#id").val() != "" && $("#pass").val() != "") {
+				window.location.href = "https://www.sist.co.kr/index.jsp";
+			} else if ($("#id").val() == "") {
+				$("#idDiv").html("아이디는 필수입력");
+                $("#passDiv").html("");
+				$("#id").focus();
+			} else if ($("#pass").val() == "") {
+				$("#passDiv").html("비밀번호는 필수입력");
+                $("#idDiv").html("");
+				$("#pass").focus();
+			} 
+		});
+
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="id" class="inputBox" placeholder="ID" />
+	<br>
+	<div id="idDiv"></div>
+	<input type="password" id="pass" class="inputBox"
+		placeholder="PASSWORD" />
+	<div id="passDiv"></div>
+	<input type="button" id="loginBtn" value="로그인" class="btn" />
+</body>
+</html>
