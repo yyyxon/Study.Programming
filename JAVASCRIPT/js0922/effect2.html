@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+#img {
+    display: none;
+}
+</style>
+<!-- jQuery CDN 시작 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQeury CDN 끝 -->
+<script type="text/javascript">
+$(function() {
+    //$("#img").hide();
+    
+    $("#btnDown").click(function() {
+        //$("#img").slideDown(1000);
+        $("#img").slideDown(1000, function(){
+            alert("보이기 완료");
+       });
+    });
+
+    $("#btnUp").click(function() {
+        $("#img").slideUp(1000);
+    });
+
+    $("#btnToggle").click(function() {
+        $("#img").slideToggle(1000);
+    });
+});
+</script>
+</head>
+<body>
+    <div id="imgDiv">
+    <img src="../common/images/dam.jpg" id="img"/>
+ </div>
+ <div>
+     <input type="button" value="펼쳐보이기" class="btn" id="btnDown"/> 
+     <input type="button" value="말아올리기" class="btn" id="btnUp"/> 
+     <input type="button" value="반전" class="btn" id="btnToggle"/> 
+ </div>
+</body>
+</html>
