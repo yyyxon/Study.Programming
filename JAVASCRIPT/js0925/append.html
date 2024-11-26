@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://192.168.10.145/html_prj/common/css/main_v20230906.css">
+<style type="text/css">
+.box{ width: 250px;}
+#tab{ border-top: 2px solid #333; border-spacing: 0px; text-align: center;}
+#subTitle{ width: 400px; border-bottom: 1px solid #333; height: 30px;} 
+#writeTitle{ width: 150px; border-bottom: 1px solid #333; }
+td{ border-bottom: 1px solid #333; height: 25px;}
+</style>
+<!-- jQuery CDN 시작  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQuery CDN 끝 -->
+<script type="text/javascript">
+var num=0;
+$(function(){
+    $("#btn").click(function(){
+        var output="<div style='border:1px solid #333; margin-top:10px'><strong>"+ num++ +"</strong></div>";
+        $("#output").append( output ); //자식 노드로 추가
+    });//click
+
+    $("#btn2").click(function(){
+        $("#subject li:first").remove();
+    });//click
+
+    $("#btn3").click(function(){
+        $("#subject li:last").remove();
+    });//click
+
+    $("#btn4").click(function(){
+        $("#subject li:eq(1)").remove();
+    });//click
+
+    var cnt=1;
+    $("#appendFrm").click(function(){
+        if($("#div div").length > 4){
+            alert("이름은 5개까지만 추가하실 수 있습니다.");
+            return;
+        }//if
+
+        var div="<div style='width:330px; margin-top:10px'>"+
+                    "<label>"+ ++cnt +". 이름</label>" +
+                    "<input type='text' name='name' class='inputBox box'/>" +
+                "</div>";
+
+        $("#div").append(div);
+        })//appendFrm
+
+    $("#removeFrm").click(function(){
+        if($("#div div").length != 1){
+            $("#div div:last").remove();
+        }//if
+    })//removeFrm
+
+    $("#btnInput").click(function(){
+   
+        var subject = $("#subject2").val();
+        var date = new Date();
+        var inputDate = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
+
+        if(subject == 0){
+            alert("제목을 입력해주세용");
+            return;
+        }//if
+
+        var output="<tr><td>"+subject+"</td><td>" + inputDate +"</td></tr>"
+
+        $("#tab tbody").append(output);
+        $("#subject2").val("");
+
+    })//btnInput
+
+    $("#btnRemove").click(function(){
+        if($("#tab tr").length > 1){
+            $("#tab tr:last").remove(); 
+        }//if
+    })//btnRemove
+
+});//ready
+</script>
+</head>
+<body>
+<input type="button" value="추가" class="btn" id="btn"/>
+<div id="output"></div>
+<input type="button" value="처음 태그 삭제" class="btn" id="btn2"/>
+<input type="button" value="마지막 태그 삭제" class="btn" id="btn3"/>
+<input type="button" value="인덱스에 대한 태그 삭제" class="btn" id="btn4"/>
+<div>
+    <ul id="subject">
+        <li>Java SE</li>
+        <li>Oracle</li>
+        <li>JDBC</li>
+        <li>HTML</li>
+    </ul>
+</div>
+<div style="width: 330px; text-align: right;">
+    <img src="images/plus.png"  style="width: 32px; cursor: pointer;" title="추가하기" id="appendFrm">
+    <img src="images/minus.png" style="width: 32px;" title="삭제하기" id="removeFrm">
+</div>
+<div id="div">
+<div style="width: 330px;">
+    <label>1. 이름</label>
+    <input type="text" name="name" class="inputBox box"/>
+</div>
+</div>
+<div>
+    <form name="frm">
+<label>제목</label><input type="text" name="subject2" class="inputBox" id="subject2" style="width: 400px;"/>
+<input type="button" value="입력" class="btn" id="btnInput" />
+<input type="button" value="삭제" class="btn" id="btnRemove" />
+</form>
+<table id="tab">
+    <thead>
+    <tr>
+        <th id="subTitle">제목</th>
+        <th id="writeTitle">작성일</th>
+    </tr>
+</thead>
+<tbody>
+
+</tbody>
+</table>
+</div>
+</body>
+</html>
