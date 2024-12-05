@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://192.168.10.145/html_prj/common/css/main_v20230906.css">
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN 시작  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQuery CDN 끝 -->
+<script type="text/javascript">
+ $(function(){
+        var ranN =parseInt( Math.random()*6)+1
+        roll()
+        $("#btn").click(roll)
+})//ready
+
+function roll(){
+ranN =parseInt( Math.random()*6)+1
+$("#dice1").prop("src","images/dice_"+ranN+".png")
+ranN =parseInt( Math.random()*6)+1
+$("#dice2").prop("src","images/dice_"+ranN+".png")
+}//roll
+</script>
+</head>
+<body>
+<div>
+    <img src="images/dice1.png" id="dice1"/><img src="images/dice1.png" id="dice2"/>
+</div>
+<div>
+    <input type="button" value="주사위 던지기" class="btn" id="btn"/>
+</div>
+</body>
+</html>
