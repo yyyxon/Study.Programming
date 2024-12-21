@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" type="text/css" 
+href="http://localhost/html_prj/common/css/main_v20230906.css"/>
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN 시작 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQeury CDN 끝 -->
+
+<!-- coin slider 시작 -->
+<script type="text/javascript" src="http://localhost/html_prj/common/coin/coin-slider.min.js"></script>
+<link rel="stylesheet" href="http://localhost/html_prj/common/coin/coin-slider-styles.css" type="text/css" />
+<!-- coin slider 끝 -->
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#temp').coinslider({ 
+		width: 240,
+		height: 170,
+		delay: 800, 		//이미지 넘겨지는 속도
+		opacity: 0.6, 		//설명 투명도
+		effect: 'random', 	//넘겨질 때 효과
+		navigation: true, 	//next navi
+		hoverPause: true 	//마우스 올라가면 멈춤
+	});
+});
+</script>
+</head>
+<body>
+<div id="temp">
+	<a href="#void" target="_blank">
+		<img src="images/img1.png" title="우는 차차" />
+		<span>
+			<b>BMW 정비공장</b><br/>
+			김주민, 차준식, 홍지성, 정민교, 김다영으로 구성된 1조
+		</span>
+	</a>
+	<a href="#void" target="_blank">
+		<img src="images/img2.png" title="웃는 차차" />
+		<span>
+			<b>카페인 중독</b><br/>
+			장용석, 오호수, 서효민, 김선경, 박서현으로 구성된 2조
+		</span>
+	</a>
+	<a href="#void" target="_blank">
+		<img src="images/img3.png" title="멍때리는 차차" />
+		<span>
+			<b>ERP를 만들고 싶었어요</b><br/>
+			박상준, 강다연, 송지하, HCY로 구성된 3조
+		</span>
+	</a>
+	<a href="#void" target="_blank">
+		<img src="images/img4.png" title="반짝반짝" />
+		<span>
+			<b>학사 관리</b><br/>
+			양승연, 임태균, 김인영, 이동원, 이승우로 구성된 4조
+		</span>
+	</a>
+</div>
+</body>
+</html>
