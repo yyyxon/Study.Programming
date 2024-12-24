@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<style type="text/css">
+
+</style>
+<!-- jQuery CDN 시작 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- jQeury CDN 끝 -->
+
+<!-- summernote 시작 -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+<!-- i18n -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/lang/summernote-ko-KR.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	$("#note").summernote({
+		toolbar: [
+		    // [groupName, [list of button]]
+		    ['style', ['bold', 'italic', 'underline', 'clear']],
+		    //['font', ['strikethrough', 'superscript', 'subscript']],
+		    ['fontsize', ['fontsize']],
+		    ['color', ['color']],
+		    ['para', ['ul', 'ol', 'paragraph']],
+		    ['table', ['table']],
+		    ['insert', ['link', 'picture', 'video']],
+		    ['fontname', ['fontname']]
+		    //['height', ['height']]
+		  ],
+		  placeholder: '자신의 경험을 자유롭게 작성해주세요.',
+		  Height: 300,
+		  fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Pretendard', '맑은 고딕', '휴먼편지체'],
+		  lang: 'ko-KR'
+	});	
+});//ready
+</script>
+<!-- summernote 끝 -->
+<script type="text/javascript">
+$(function() {
+	$("#btn").click(function() {
+		$("#frm").submit();
+	});
+});
+</script>
+</head>
+<body>
+<!-- 
+	 1. 전송 방식 반드시~~!!! !!post!! 
+     2. 삽입되는 이미지는 1Mbyte 이내여야한다. 
+-->
+<div style="width: 600px">
+<form action = "test.jsp" method="post" id="frm">
+	<label>이름</label>
+	<input type="text" name="name" class="inputBox"/><br>
+	<textarea class="inputBox" name="note" id="note"></textarea>
+	<input type="button" value="전송" id="btn" class="btn"/>
+</form>	
+</div>
+</body>
+</html>
